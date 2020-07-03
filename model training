@@ -66,17 +66,13 @@ for i in range(432, 10097):
     y_test.append(test_set_scaled[i, 0])
 X_test, y_test = np.array(X_test), np.array(y_test)
 
-predicted_stock_price = regressor.predict(X_test)
+predicted_out = regressor.predict(X_test)
 
 
 a = np.zeros((9665, 1))
-predicted_stock_price = np.concatenate((predicted_stock_price, a, a, a), axis=1)
+predicted_out = np.concatenate((predicted_out, a, a, a), axis=1)
 act = df.iloc[40432:, 1:2].values
-predicted_stock_price = sc.inverse_transform(predicted_stock_price)
-
-print(len(predicted_stock_price[0:, 0:1]))
-print(len(df.iloc[40432:-433, 1:2].values))
-
+predicted_out = sc.inverse_transform(predicted_stock_out)
 
 
 # Visualising the results
@@ -90,7 +86,7 @@ plt.legend()
 plt.show()
 
 
-
+#saving model
 model_json = regressor.to_json()
 with open("regressor.json", "w") as json_file:
     json_file.write(model_json)
