@@ -8,7 +8,7 @@ app=Flask(__name__)
 def get_index(out_time):
 
     import pandas as pd
-    df = pd.read_csv("C:/Users/Anil/Desktop/desktop/T1.csv")
+    df = pd.read_csv("dataset/T1.csv")
 
     # Feature Scaling
     from sklearn.preprocessing import MinMaxScaler
@@ -57,7 +57,7 @@ def pred(out):
     import numpy as np
     import pandas as pd
     import matplotlib.pyplot as plt
-    df = pd.read_csv("C:/Users/Anil/Desktop/desktop/T1.csv")
+    df = pd.read_csv("dataset/T1.csv")
 
     # Feature Scaling
     from sklearn.preprocessing import MinMaxScaler
@@ -80,7 +80,7 @@ def pred(out):
     import pandas as pd
     import matplotlib.pyplot as plt
 
-    df = pd.read_csv("C:/Users/Anil/Desktop/desktop/T1.csv")
+    df = pd.read_csv("dataset/T1.csv")
     from sklearn.preprocessing import MinMaxScaler
     sc = MinMaxScaler(feature_range=(0, 1))
     test_set = df.iloc[40000:, 1:].values
