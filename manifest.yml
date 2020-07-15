@@ -3,5 +3,5 @@ applications:
   random-route: true
   memory: 128M
   buildpacks:
-    - python_buildpack
-    command: python application.py
+  - python_buildpack
+  command: python application.py
