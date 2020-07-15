@@ -2,3 +2,6 @@ applications:
 - name: Power_Output_Uday
   random-route: true
   memory: 128M
+  buildpacks:
+    - python_buildpack
+    command: python application.py
